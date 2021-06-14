@@ -5,11 +5,11 @@ import java.util.List;
 
 import com.antwhite.ipldashboard.model.Match;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-public interface MatchRepository extends CrudRepository<Match, Long>  {
+public interface MatchRepository extends JpaRepository<Match, Long> {
 
     List<Match> findByTeam1OrTeam2OrderByDateDesc(String teamName1, String teamName2, Pageable pageable);
 
