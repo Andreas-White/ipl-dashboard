@@ -8,14 +8,11 @@ import com.antwhite.ipldashboard.model.Team;
 import com.antwhite.ipldashboard.service.MatchService;
 import com.antwhite.ipldashboard.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
+@RequestMapping(value = "/team")
 public class TeamController {
 
     private final TeamService teamService;
@@ -28,19 +25,19 @@ public class TeamController {
     }
 
 
-    @GetMapping("/team")
+    @GetMapping("")
     public Iterable<Team> getAllTeam() {
         return this.teamService.getAllTeams();
     }
 
-    @GetMapping("/team/{teamName}")
+    @GetMapping("/{teamName}")
     public Team getTeam(@PathVariable String teamName) {
         Team team = this.teamService.getByTeamName(teamName);
         team.setMatches(matchService.getLatestMatchesByTeam(teamName,4));
         return team;
     }
 
-    @GetMapping("/team/{teamName}/matches")
+    @GetMapping("/{teamName}/matches")
     public List<Match> getMatchesForTeam(@PathVariable String teamName, @RequestParam int year) {
         LocalDate startDate = LocalDate.of(year, 1, 1);
         LocalDate endDate = LocalDate.of(year + 1, 1, 1);

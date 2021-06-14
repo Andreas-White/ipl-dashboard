@@ -18,7 +18,8 @@ public class Team {
     private long totalMatches;
     private long totalWins;
     
-    @Transient
+    @Transient // The @Transient annotations indicates that this field is not required for the object to processed,
+               // saved etc.
     private List<Match> matches;
 
 
