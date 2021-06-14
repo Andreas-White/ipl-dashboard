@@ -1,4 +1,4 @@
-package io.javabrains.ipldashboard.model;
+package com.antwhite.ipldashboard.model;
 
 import java.time.LocalDate;
 

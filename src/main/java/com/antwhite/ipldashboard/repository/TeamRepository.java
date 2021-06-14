@@ -1,8 +1,7 @@
-package io.javabrains.ipldashboard.repository;
+package com.antwhite.ipldashboard.repository;
 
+import com.antwhite.ipldashboard.model.Team;
 import org.springframework.data.repository.CrudRepository;
-
-import io.javabrains.ipldashboard.model.Team;
 
 public interface TeamRepository extends CrudRepository<Team, Long>  {
 

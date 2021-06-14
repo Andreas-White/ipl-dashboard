@@ -1,10 +1,11 @@
-package io.javabrains.ipldashboard.data;
+package com.antwhite.ipldashboard.data;
 
 import java.time.LocalDate;
+
+import com.antwhite.ipldashboard.model.Match;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
-import io.javabrains.ipldashboard.model.Match;
 
 public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 

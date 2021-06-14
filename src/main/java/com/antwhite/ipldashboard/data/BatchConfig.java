@@ -1,7 +1,8 @@
-package io.javabrains.ipldashboard.data;
+package com.antwhite.ipldashboard.data;
 
 import javax.sql.DataSource;
 
+import com.antwhite.ipldashboard.model.Match;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -18,8 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-
-import io.javabrains.ipldashboard.model.Match;
 
 @Configuration
 @EnableBatchProcessing

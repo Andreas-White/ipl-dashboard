@@ -1,4 +1,4 @@
-package io.javabrains.ipldashboard.data;
+package com.antwhite.ipldashboard.data;
 
 public class MatchInput {
     private String id;

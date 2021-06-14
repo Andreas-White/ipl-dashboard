@@ -1,15 +1,14 @@
-package io.javabrains.ipldashboard.repository;
+package com.antwhite.ipldashboard.repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
+import com.antwhite.ipldashboard.model.Match;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-
-import io.javabrains.ipldashboard.model.Match;
 
 public interface MatchRepository extends CrudRepository<Match, Long>  {
 

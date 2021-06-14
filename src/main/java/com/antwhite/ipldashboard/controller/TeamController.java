@@ -1,26 +1,27 @@
-package io.javabrains.ipldashboard.controller;
+package com.antwhite.ipldashboard.controller;
 
 import java.time.LocalDate;
 import java.util.List;
 
+import com.antwhite.ipldashboard.model.Match;
+import com.antwhite.ipldashboard.model.Team;
+import com.antwhite.ipldashboard.repository.MatchRepository;
+import com.antwhite.ipldashboard.repository.TeamRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.javabrains.ipldashboard.model.Match;
-import io.javabrains.ipldashboard.model.Team;
-import io.javabrains.ipldashboard.repository.MatchRepository;
-import io.javabrains.ipldashboard.repository.TeamRepository;
-
 @RestController
 @CrossOrigin
 public class TeamController {
 
-    private TeamRepository teamRepository;
-    private MatchRepository matchRepository;
-    
+    private final TeamRepository teamRepository;
+    private final MatchRepository matchRepository;
+
+    @Autowired
     public TeamController(TeamRepository teamRepository, MatchRepository matchRepository) {
         this.teamRepository = teamRepository;
         this.matchRepository = matchRepository;
@@ -50,5 +51,4 @@ public class TeamController {
             endDate
             );
     }
-
 }    
