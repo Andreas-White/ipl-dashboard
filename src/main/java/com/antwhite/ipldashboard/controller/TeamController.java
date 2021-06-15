@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/team")
 public class TeamController {
 
+    private static final int PAGEABLE_NUMBER = 5;
     private final TeamService teamService;
     private final MatchService matchService;
 
@@ -33,7 +34,7 @@ public class TeamController {
     @GetMapping("/{teamName}")
     public Team getTeam(@PathVariable String teamName) {
         Team team = this.teamService.getByTeamName(teamName);
-        team.setMatches(matchService.getLatestMatchesByTeam(teamName,4));
+        team.setMatches(matchService.getLatestMatchesByTeam(teamName,PAGEABLE_NUMBER));
         return team;
     }
 
